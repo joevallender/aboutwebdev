@@ -6,7 +6,7 @@ return [
     'baseUrl' => '',
     'production' => false,
     'siteName' => 'AboutWeb.Dev',
-    'siteDescription' => 'Generate an elegant blog with Jigsaw',
+    'siteDescription' => 'Tips and tricks for full stack developers',
     'siteAuthor' => 'Joe Vallender',
 
     // collections
@@ -21,6 +21,14 @@ return [
             'posts' => function ($page, $allPosts) {
                 return $allPosts->filter(function ($post) use ($page) {
                     return $post->categories ? in_array($page->getFilename(), $post->categories, true) : false;
+                });
+            },
+        ],
+        'tags' => [
+            'path' => '/blog/tags/{filename}',
+            'posts' => function ($page, $allPosts) {
+                return $allPosts->filter(function ($post) use ($page) {
+                    return $post->tags ? in_array($page->getFilename(), $post->tags, true) : false;
                 });
             },
         ],

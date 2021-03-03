@@ -1,4 +1,5 @@
 /build_*/
 /node_modules/
 /vendor/
+deploy.sh
 .DS_Store

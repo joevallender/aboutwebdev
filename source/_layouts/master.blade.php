@@ -53,7 +53,7 @@
         <footer class="bg-white text-center text-sm mt-12 py-4" role="contentinfo">
             <ul class="flex flex-col md:flex-row justify-center list-none">
                 <li class="md:mr-2">
-                    &copy; <a href="https://tighten.co" title="Tighten website">Tighten</a> {{ date('Y') }}.
+                    &copy; Joe Vallender {{ date('Y') }}.
                 </li>
 
                 <li>
@@ -64,7 +64,11 @@
         </footer>
 
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
-
+        <script src="https://getinsights.io/js/insights.js"></script>
+        <script>
+        insights.init('DZxs09U_Tnnonfub');
+        insights.trackPages();
+        </script>
         @stack('scripts')
     </body>
 </html>

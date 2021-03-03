@@ -27,6 +27,16 @@
         @yield('content')
     </div>
 
+    <div class="border-b border-blue-200 mb-10 pb-4">
+        <script src="https://utteranc.es/client.js"
+            repo="joevallender/aboutwebdev"
+            issue-term="pathname"
+            theme="github-light"
+            crossorigin="anonymous"
+            async>
+        </script>
+    </div>
+
     <nav class="flex justify-between text-sm md:text-base">
         <div>
             @if ($next = $page->getNext())

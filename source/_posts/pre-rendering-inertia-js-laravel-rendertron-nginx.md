@@ -6,6 +6,7 @@ date: 2020-03-27
 #description: Fast local search powered by FuseJS
 #cover_image: /assets/img/post-cover-image-1.png
 #categories: [laravel, nginx, inertia.js, seo, rendertron]
+# tags: [lalala, lululu]
 ---
 I’m going to run through this using the same kit I’ve used to set it up. Laravel, Inertia.js, Vue, Rendertron, Nginx, Laravel Forge, Ubuntu.
 
@@ -79,25 +80,24 @@ To
         set $prerender 0;
 
         if ($http_user_agent ~* “googlebot|yahoo|bingbot”) {
-        set $prerender 1;
+            set $prerender 1;
         }
 
         if ($args ~ “_escaped_fragment_|prerender=1”) {
-        set $prerender 1;
+            set $prerender 1;
         }
         
         if ($http_user_agent ~ “Prerender”) {
-        set $prerender 0;
+            set $prerender 0;
         }
 
         if ($uri ~* “\.(js|css|xml|less|png|jpg|jpeg|gif|pdf)”) {
-        set $prerender 0;
+            set $prerender 0;
         }
 
         if ($prerender = 1) { 
-        rewrite .* /render/$scheme://$host$request_uri break;
-        proxy_pass [http://localhost:3000](http://localhost:3000);
-        
+            rewrite .* /render/$scheme://$host$request_uri break;
+            proxy_pass http://localhost:3000;
         }
      
         try_files $uri $uri/ /index.php?$query_string;
