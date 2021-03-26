@@ -28,5 +28,25 @@
 //     dd('x');
 // });
 
+// $events->beforeBuild(function ($jigsaw) {
+    
+//     print_r($jigsaw);
+//         dd();
+
+//     $posts = $jigsaw->getCollection('posts');
+
+//     foreach($posts as $post) {
+//         print_r($post->getTags());
+//         dd();
+//         foreach($post->getHeader() as $tag) {
+//             print_r($tag);
+//         }
+//     }
+
+//     dd();
+// });
+
+
+
 $events->afterBuild(App\Listeners\GenerateSitemap::class);
 $events->afterBuild(App\Listeners\GenerateIndex::class);

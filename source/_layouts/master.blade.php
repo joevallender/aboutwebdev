@@ -66,8 +66,10 @@
         <script src="{{ mix('js/main.js', 'assets/build') }}"></script>
         <script src="https://getinsights.io/js/insights.js"></script>
         <script>
-        insights.init('DZxs09U_Tnnonfub');
-        insights.trackPages();
+        if(!window.localStorage.getItem('disable-tracking')) {
+            insights.init('DZxs09U_Tnnonfub');
+            insights.trackPages();
+        }
         </script>
         @stack('scripts')
     </body>

@@ -38,6 +38,9 @@ return [
     'getDate' => function ($page) {
         return Datetime::createFromFormat('U', $page->date);
     },
+    'getTags' => function ($page) {
+        return $page->tags;
+    },
     'getExcerpt' => function ($page, $length = 255) {
         if ($page->excerpt) {
             return $page->excerpt;
